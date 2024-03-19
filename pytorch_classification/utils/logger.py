@@ -29,7 +29,7 @@ class Logger(object):
         if fpath is not None:
             if resume: 
                 self.file = open(fpath, 'r') 
-                name = self.file.readline()
+                name = self.file.readline(5_000_000)
                 self.names = name.rstrip().split('\t')
                 self.numbers = {}
                 for _, name in enumerate(self.names):
