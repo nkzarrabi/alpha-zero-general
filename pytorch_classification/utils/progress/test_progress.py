@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 
 from __future__ import print_function
-
-import random
 import time
 
 from progress.bar import (Bar, ChargingBar, FillingSquaresBar,
@@ -11,11 +9,12 @@ from progress.bar import (Bar, ChargingBar, FillingSquaresBar,
 from progress.spinner import (Spinner, PieSpinner, MoonSpinner, LineSpinner,
                               PixelSpinner)
 from progress.counter import Counter, Countdown, Stack, Pie
+import secrets
 
 
 def sleep():
     t = 0.01
-    t += t * random.uniform(-0.1, 0.1)  # Add some variance
+    t += t * secrets.SystemRandom().uniform(-0.1, 0.1)  # Add some variance
     time.sleep(t)
 
 
@@ -43,6 +42,6 @@ for singleton in (Counter, Countdown, Stack, Pie):
 
 bar = IncrementalBar('Random', suffix='%(index)d')
 for i in range(100):
-    bar.goto(random.randint(0, 100))
+    bar.goto(secrets.SystemRandom().randint(0, 100))
     sleep()
 bar.finish()
