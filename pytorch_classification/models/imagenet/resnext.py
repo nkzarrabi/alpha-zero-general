@@ -1,4 +1,3 @@
-from __future__ import division
 """ 
 Creates a ResNeXt Model as defined in:
 Xie, S., Girshick, R., Dollar, P., Tu, Z., & He, K. (2016). 
